@@ -1,0 +1,313 @@
+{
+  "swagger": "2.0",
+  "info": {},
+  "tags": [
+    {
+      "name": "Register",
+      "description": "API for register in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": ["Register"],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": ["Login"],
+        "description": "Login user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to logged-in",
+            "schema": {
+              "$ref": "#/definitions/UserLogged"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "User is logged-in",
+            "schema": {
+              "$ref": "#/definitions/UserLogged"
+            }
+          }
+        }
+      }
+    },
+    "/users/me": {
+      "get": {
+        "summary": "Current user",
+        "tags": ["Login"],
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/UserLogged"
+            }
+          }
+        }
+      }
+    },
+    "/expenses": {
+      "get": {
+        "summary": "Get all expenses in system",
+        "tags": ["Expenses"],
+        "responses": {
+          "200": {
+            "description": "Expenses",
+            "schema": {
+              "$ref": "#/definitions/Expenses"
+            }
+          }
+        }
+      }
+    },
+    "/expenses/": {
+      "post": {
+        "tags": ["Expenses"],
+        "summary": "Create new expense in system",
+        "parameters": [
+          {
+            "name": "expense",
+            "in": "body",
+            "description": "expense that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Expenses"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New expense is created",
+            "schema": {
+              "$ref": "#/definitions/Expenses"
+            }
+          }
+        }
+      }
+    },
+    "/expenses/{myid}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of expense that we want to find",
+          "type": "string"
+        }
+      ],
+      "delete": {
+        "summary": "Delete expense with given ID",
+        "tags": ["Expenses"],
+        "responses": {
+          "200": {
+            "description": "expense is deleted",
+            "schema": {
+              "$ref": "#/definitions/Expenses"
+            }
+          }
+        }
+      }
+    },
+    "/expenses/{id}": {
+      "put": {
+        "summary": "Update expense with given ID",
+        "tags": ["Expenses"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of expense that we want to find",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "expense is update",
+            "schema": {
+              "$ref": "#/definitions/Expenses"
+            }
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "summary": "Get all categories in system",
+        "tags": ["Categories"],
+        "responses": {
+          "200": {
+            "description": "Categories",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        }
+      }
+    },
+    "/categories/": {
+      "post": {
+        "tags": ["Categories"],
+        "summary": "Create new category in system",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "body",
+            "description": "category that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New category is created",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        }
+      }
+    },
+    "/categories/{myid}": {
+      "put": {
+        "summary": "Update category with given ID",
+        "tags": ["Categories"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of category that we want to find",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "category is update",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of category that we want to find",
+          "type": "string"
+        }
+      ],
+      "delete": {
+        "summary": "Delete category with given ID",
+        "tags": ["Categories"],
+        "responses": {
+          "200": {
+            "description": "category is deleted",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "fullname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "UserLogged": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Expenses": {
+      "properties": {
+        "amount": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "number"
+        }
+      }
+    },
+    "Categories": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    }
+  },
+  "securityDefinitions": {
+    "bearerAuth": {
+      "name": "Authorization",
+      "in": "header",
+      "type": "apiKey",
+      "description": "Enter the token with the Bearer prefix, eg: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC"
+    }
+  },
+  "security": [{ "bearerAuth": [] }]
+}
