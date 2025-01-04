@@ -1,4 +1,4 @@
-# E-Commerce API
+# Expense Management API
 
 This project contains a minimal start-up for a Node.js expense management project using Typescript, ESLint and Prettier.
 
