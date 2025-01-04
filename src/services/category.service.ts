@@ -22,7 +22,7 @@ const updateCategory = async (id: number, category: Category) => {
 };
 
 const deleteCategory = async (id: number) => {
-  return await db.delete(categories).where(eq(categories.id, id));
+  return await db.delete(categories).where(eq(categories.id, id)).returning();
 };
 
 export default { create, getAllCategories, updateCategory, deleteCategory };

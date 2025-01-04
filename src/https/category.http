@@ -1,0 +1,27 @@
+POST http://localhost:3010/categories
+Content-Type: application/json
+
+{
+  "name": "Category 2",
+  "description": "Description of category 2"
+}
+
+###
+
+GET http://localhost:3010/categories
+Content-Type: application/json
+
+### 
+
+PUT http://localhost:3010/categories/2
+Content-Type: application/json
+
+{
+    "name": "Category 2 - Updated",
+    "description": "Description of category 2 - Updated"
+}
+
+### 
+DELETE http://localhost:3010/categories/3
+Content-Type: application/application/json
+

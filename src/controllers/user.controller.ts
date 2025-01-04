@@ -34,4 +34,16 @@ const loginUser = async (req: Request, res: Response): Promise<Response> => {
   }
 };
 
-export default { registerUser, loginUser };
+const getUserWithExpenses = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  try {
+    const users = await userService.getUserWithExpenses();
+    return res.json({ users });
+  } catch (error) {
+    return res.status(500).json({ error });
+  }
+};
+
+export default { registerUser, loginUser, getUserWithExpenses };

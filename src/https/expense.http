@@ -1,0 +1,30 @@
+### Create a new expense
+POST http://localhost:3010/expenses
+Content-Type: application/json
+
+{
+  "amount": "100.50",
+  "category": "Food",
+  "description": "Lunch at restaurant",
+  "userId": 1
+}
+
+### Get all expenses
+GET http://localhost:3010/expenses
+
+### Get a specific expense by ID
+GET http://localhost:3010/expenses/1
+
+### Update an expense
+PUT http://localhost:3010/expenses/1
+Content-Type: application/json
+
+{
+  "amount": "120.75",
+  "category": "Food",
+  "description": "Dinner at restaurant",
+  "userId": 1
+}
+
+### Delete an expense
+DELETE http://localhost:3010/expenses/1
