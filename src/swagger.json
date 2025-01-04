@@ -61,20 +61,6 @@
         }
       }
     },
-    "/users/me": {
-      "get": {
-        "summary": "Current user",
-        "tags": ["Login"],
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/UserLogged"
-            }
-          }
-        }
-      }
-    },
     "/expenses": {
       "get": {
         "summary": "Get all expenses in system",
@@ -252,16 +238,6 @@
         "fullname": {
           "type": "string"
         },
-        "email": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        }
-      }
-    },
-    "UserLogged": {
-      "properties": {
         "email": {
           "type": "string"
         },
