@@ -28,6 +28,7 @@ yarn serve
 
 ```bash
 docker-compose up --build
+```
 
 The application will be launched by [Nodemon](https://nodemon.com) so it's will restart automatically on file change
 
@@ -54,4 +55,7 @@ This project is maintained by:
 ## License
 
 [The MIT License.](https://opensource.org/licenses/MIT)
+
+```
+
 ```
