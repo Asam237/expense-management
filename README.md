@@ -42,7 +42,7 @@ This project is maintained by:
 
 ## Screenshoot
 
-![localhost_3010_api-docs_](https://github.com/Asam237/e-commerce-api/assets/34966088/b6e8b14c-da5e-469b-ad95-5836c1a03fbf)
+![image](https://github.com/user-attachments/assets/435857b9-f654-4ccd-a072-c00d1a80fbea)
 
 ## License
 
