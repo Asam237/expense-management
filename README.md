@@ -6,11 +6,15 @@ This project contains a minimal start-up for a Node.js expense management projec
 
 - Node.js 16+
 - Yarn
+- Docker (with docker)
+- Docker Compose (with docker)
 
 ## Installation
 
 - Create a `.env` file using the template `.env.example`
 - Install dependencies
+
+- Build and start the Docker containers (with docker)
 
 ```bash
 yarn install
@@ -22,11 +26,14 @@ yarn install
 yarn serve
 ```
 
+```bash
+docker-compose up --build
+
 The application will be launched by [Nodemon](https://nodemon.com) so it's will restart automatically on file change
 
 Test the API with: `Postman`
 
-Swagger: `http://localhost:3010/api-docs/`  
+Swagger: `http://localhost:3010/api-docs/`
 (Update the port number to match the one in `.env`)
 
 ## Authors
@@ -47,3 +54,4 @@ This project is maintained by:
 ## License
 
 [The MIT License.](https://opensource.org/licenses/MIT)
+```
