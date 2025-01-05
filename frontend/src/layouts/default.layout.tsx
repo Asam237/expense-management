@@ -1,7 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Inner, { anim } from "@/components/Curve";
 
 interface DefaultLayoutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -56,7 +55,7 @@ export const DefaultLayout = ({
           </div>
         </header>
         <main className={className} {...props}>
-          <Inner>{children}</Inner>
+          {children}
         </main>
       </AnimatePresence>
     </>
