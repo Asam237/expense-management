@@ -10,9 +10,9 @@ const SignIn = () => {
       </Head>
       <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-screen flex justify-center items-center">
         <div className="flex justify-center items-center h-screen w-screen">
-          <div className="xl:h-[60vh] xl:w-[80vw] shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden">
+          <div className="xl:h-[60vh] xl:w-[80vw] shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0">
             <div className="w-full xl:w-1/2 p-10 flex flex-col justify-center">
-              <h1 className="text-3xl font-bold mb-6">Login</h1>
+              <h1 className="text-2xl xl:text-3xl font-bold mb-6">Login</h1>
               <div className="signin-container flex flex-col items-center my-4">
                 <div className="w-full mt-4 flex items-center border-b border-gray-300 py-2">
                   <AiFillMail size={26} className="mr-2 text-blue-800" />
@@ -34,7 +34,7 @@ const SignIn = () => {
               <p className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 mt-4">
                 Forgot password?
               </p>
-              <button className="w-full text-lg py-4 mt-8 cursor-pointer bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+              <button className="w-full text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition duration-300">
                 Login
               </button>
               <p className="font-medium text-gray-700 text-center mt-4">
