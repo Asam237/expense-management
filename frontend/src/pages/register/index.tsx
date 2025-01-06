@@ -25,7 +25,7 @@ const SignUp = () => {
         <div className="flex justify-center items-center h-screen w-screen">
           <div className="xl:h-[60vh] xl:w-[80vw] shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden">
             <div className="w-full xl:w-1/2 p-10 flex flex-col justify-center">
-              <h1 className="text-3xl font-bold mb-6">Login</h1>
+              <h1 className="text-3xl font-bold mb-6">Register</h1>
               <div className="signin-container flex flex-col items-center my-4">
                 <div className="w-full mt-4 flex items-center border-b border-gray-300 py-2">
                   <FaUser size={26} className="mr-2 text-blue-800" />
@@ -58,7 +58,7 @@ const SignUp = () => {
               <p className="font-medium text-gray-700 text-center mt-4">
                 Do you already have an account ?
                 <Link
-                  href="/signin"
+                  href="/login"
                   className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
                 >
                   Signup now

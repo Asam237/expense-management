@@ -40,7 +40,7 @@ const SignIn = () => {
               <p className="font-medium text-gray-700 text-center mt-4">
                 Don&apos;t have an account?
                 <Link
-                  href="/signup"
+                  href="/login"
                   className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
                 >
                   Signin now
