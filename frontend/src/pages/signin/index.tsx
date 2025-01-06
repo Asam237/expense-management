@@ -38,7 +38,7 @@ const SignIn = () => {
                 Login
               </button>
               <p className="font-medium text-gray-700 text-center mt-4">
-                Don't have an account?
+                Don&apos;t have an account?
                 <Link
                   href="/signup"
                   className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
