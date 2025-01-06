@@ -6,7 +6,7 @@ const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/signin");
+    router.push("/login");
   }, [router]);
 
   return (
