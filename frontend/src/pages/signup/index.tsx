@@ -56,7 +56,7 @@ const SignUp = () => {
                 Register
               </button>
               <p className="font-medium text-gray-700 text-center mt-4">
-                Already have ance account ?
+                Do you already have an account ?
                 <Link
                   href="/signin"
                   className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
