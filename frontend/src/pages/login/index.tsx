@@ -43,7 +43,7 @@ const SignIn = () => {
                   href="/register"
                   className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
                 >
-                  Signin now
+                  Signup now
                 </Link>
               </p>
             </div>

@@ -61,7 +61,7 @@ const SignUp = () => {
                   href="/login"
                   className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
                 >
-                  Signup now
+                  Signin now
                 </Link>
               </p>
             </div>
