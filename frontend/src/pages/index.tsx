@@ -22,7 +22,7 @@ const Home = () => {
           never been simpler!
         </p>
         <button
-          className="w-1/2 lg:w-56 mx-auto text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition duration-300 z-10"
+          className="w-1/2 lg:w-56 mx-auto text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-white text-black rounded-lg hover:bg-gray-300 hover:text-black hover:border-gray-800 transition duration-300 z-10 font-medium"
           onClick={() => router.push("/login")}
         >
           Login

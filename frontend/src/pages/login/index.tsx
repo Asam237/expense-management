@@ -74,12 +74,12 @@ const SignIn = () => {
       >
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <div className="flex justify-center items-center h-screen w-screen z-10">
-          <div className="xl:h-[60vh] xl:w-1/4 shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0">
+          <div className="xl:h-[60vh] xl:w-1/4 flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0 shadow-xl">
             <div className="w-full p-10 flex flex-col justify-center">
               <h1 className="text-2xl xl:text-3xl font-bold mb-6">Login</h1>
               <div className="signin-container flex flex-col items-center my-4">
                 <div className="w-full mt-4 flex items-center border-b border-gray-300 py-2">
-                  <AiFillMail size={26} className="mr-2 text-blue-800" />
+                  <AiFillMail size={26} className="mr-2 text-gray-900" />
                   <input
                     type="email"
                     placeholder="Email"
@@ -89,7 +89,7 @@ const SignIn = () => {
                   />
                 </div>
                 <div className="w-full mt-4 flex items-center border-b border-gray-300 py-2">
-                  <AiFillLock size={26} className="mr-2 text-blue-800" />
+                  <AiFillLock size={26} className="mr-2 text-gray-900" />
                   <input
                     type="password"
                     placeholder="Password"
@@ -99,7 +99,7 @@ const SignIn = () => {
                   />
                 </div>
               </div>
-              <p className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 mt-4">
+              <p className="font-medium text-gray-950 cursor-pointer hover:underline underline-offset-4 mt-4">
                 Forgot password?
               </p>
               <Tooltip.Provider>
@@ -107,7 +107,7 @@ const SignIn = () => {
                   <Tooltip.Trigger asChild>
                     <button
                       onClick={handleLogin}
-                      className="w-full text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+                      className="w-1/2 lg:w-56 mx-auto text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-gray-900 text-white rounded-lg hover:bg-gray-700 hover:border-gray-800 transition duration-300 z-10 border-gray-700 border"
                       disabled={isLoading}
                     >
                       {isLoading ? "Loading..." : "Login"}
@@ -126,7 +126,7 @@ const SignIn = () => {
                 Don&apos;t have an account?
                 <Link
                   href="/register"
-                  className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 pl-1"
+                  className="text-gray-950 cursor-pointer hover:underline underline-offset-4 pl-1 font-bold"
                 >
                   Register now
                 </Link>
