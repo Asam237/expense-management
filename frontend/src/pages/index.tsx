@@ -14,7 +14,7 @@ const Home = () => {
         <h3 className="text-white text-2xl xl:text-4xl z-10 font-bold text-center">
           Welcome to Expense Management System
         </h3>
-        <p className="text-gray-100 z-10 text-center leading-6 xl:leading-10 mt-4 text-xs md:text-lg">
+        <p className="text-gray-100 z-10 text-center leading-6 xl:leading-6 mt-4 text-xs md:text-lg">
           Simplify your finances effortlessly! Connect to manage your expenses,
           track spending, and set budgets with ease. Gain valuable insights into
           your habits and make smarter financial decisions. Stay organized and
