@@ -74,8 +74,8 @@ const SignIn = () => {
       >
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <div className="flex justify-center items-center h-screen w-screen z-10">
-          <div className="xl:h-[60vh] xl:w-[80vw] shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0">
-            <div className="w-full xl:w-1/2 p-10 flex flex-col justify-center">
+          <div className="xl:h-[60vh] xl:w-1/4 shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0">
+            <div className="w-full p-10 flex flex-col justify-center">
               <h1 className="text-2xl xl:text-3xl font-bold mb-6">Login</h1>
               <div className="signin-container flex flex-col items-center my-4">
                 <div className="w-full mt-4 flex items-center border-b border-gray-300 py-2">
@@ -132,7 +132,7 @@ const SignIn = () => {
                 </Link>
               </p>
             </div>
-            <div
+            {/* <div
               className="hidden xl:flex w-full xl:w-1/2 bg-cover bg-center items-center justify-center relative"
               style={{
                 backgroundImage: "url(./pictures/login.webp)",
@@ -144,7 +144,7 @@ const SignIn = () => {
                   Connect to manage your expenses easily and efficiently!
                 </p>
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
