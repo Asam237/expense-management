@@ -1,15 +1,79 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import { AiFillMail, AiFillLock } from "react-icons/ai";
+import { create } from "zustand";
+import axios from "axios";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import { useRouter } from "next/router";
+
+export interface AuthState {
+  isAuthenticated: boolean;
+  login: () => void;
+  logout: () => void;
+}
+
+export const useAuthStore = create<AuthState>((set) => ({
+  isAuthenticated: false,
+  login: () => set({ isAuthenticated: true }),
+  logout: () => set({ isAuthenticated: false }),
+}));
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [tooltipMessage, setTooltipMessage] = useState("");
+  const [tooltipColor, setTooltipColor] = useState("bg-green-500");
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const login = useAuthStore((state) => state.login);
+  const router = useRouter();
+
+  const handleLogin = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.post("http://localhost:3010/users/login", {
+        email,
+        password,
+      });
+      if (response.status === 200) {
+        login();
+        setTooltipMessage("Login successful! Redirecting...");
+        setTooltipColor("bg-green-500");
+        setShowTooltip(true);
+        setTimeout(() => {
+          setShowTooltip(false);
+          router.push("/");
+        }, 2000);
+      } else {
+        setTooltipMessage("Login failed. Please try again.");
+        setTooltipColor("bg-red-500");
+        setShowTooltip(true);
+        setTimeout(() => setShowTooltip(false), 2000);
+      }
+    } catch (error) {
+      setTooltipMessage("An error occurred during login. Please try again.");
+      setTooltipColor("bg-red-500");
+      setShowTooltip(true);
+      setTimeout(() => setShowTooltip(false), 2000);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <Head>
         <title>Login | Expense Management</title>
       </Head>
-      <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-screen flex justify-center items-center">
-        <div className="flex justify-center items-center h-screen w-screen">
+      <div
+        className="flex bg-cover bg-center items-center justify-center relative h-screen w-screen"
+        style={{
+          backgroundImage: "url(./pictures/login.webp)",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="flex justify-center items-center h-screen w-screen z-10">
           <div className="xl:h-[60vh] xl:w-[80vw] shadow-lg flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0">
             <div className="w-full xl:w-1/2 p-10 flex flex-col justify-center">
               <h1 className="text-2xl xl:text-3xl font-bold mb-6">Login</h1>
@@ -19,6 +83,8 @@ const SignIn = () => {
                   <input
                     type="email"
                     placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                   />
                 </div>
@@ -27,6 +93,8 @@ const SignIn = () => {
                   <input
                     type="password"
                     placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                   />
                 </div>
@@ -34,9 +102,26 @@ const SignIn = () => {
               <p className="font-medium text-blue-900 cursor-pointer hover:underline underline-offset-4 mt-4">
                 Forgot password?
               </p>
-              <button className="w-full text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-                Login
-              </button>
+              <Tooltip.Provider>
+                <Tooltip.Root open={showTooltip}>
+                  <Tooltip.Trigger asChild>
+                    <button
+                      onClick={handleLogin}
+                      className="w-full text-lg py-2 xl:py-4 mt-8 cursor-pointer bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? "Loading..." : "Login"}
+                    </button>
+                  </Tooltip.Trigger>
+                  <Tooltip.Content
+                    side="top"
+                    align="center"
+                    className={`${tooltipColor} text-white p-2 rounded m-2`}
+                  >
+                    {tooltipMessage}
+                  </Tooltip.Content>
+                </Tooltip.Root>
+              </Tooltip.Provider>
               <p className="font-medium text-gray-700 text-center mt-4">
                 Don&apos;t have an account?
                 <Link
@@ -53,9 +138,9 @@ const SignIn = () => {
                 backgroundImage: "url(./pictures/login.webp)",
               }}
             >
-              <div className="absolute inset-0 bg-black opacity-75"></div>
+              <div className="absolute inset-0 bg-slate-900"></div>
               <p className="text-white text-2xl xl:text-3xl z-10">
-                <p className="text-white text-2xl xl:text-3xl z-10 text-center leading-10">
+                <p className="text-white text-2xl xl:text-3xl z-10 text-center leading-10 lg:mx-6">
                   Connect to manage your expenses easily and efficiently!
                 </p>
               </p>

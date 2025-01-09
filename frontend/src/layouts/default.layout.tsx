@@ -1,15 +1,23 @@
+import Aside from "@/components/Aside";
+import Header from "@/components/Heder";
+
 interface DefaultLayoutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const DefaultLayout = ({
+export const DefaultLayout: React.FC<DefaultLayoutProps> = ({
   children,
   className,
   ...props
-}: DefaultLayoutProps) => {
+}) => {
   return (
-    <>
-      <main className={className} {...props}>
+    <div className={`flex flex-row ${className}`} {...props}>
+      <Aside />
+      <main className="w-full">
+        <header className="w-full h-20">
+          <Header />
+          <hr />
+        </header>
         {children}
       </main>
-    </>
+    </div>
   );
 };
