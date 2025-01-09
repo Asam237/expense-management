@@ -4,9 +4,11 @@ import { CategoryRoute } from "./routes/category.route";
 import { ExpenseRoute } from "./routes/expense.route";
 import * as swaggerUi from "swagger-ui-express";
 import * as swaggerDoc from "./swagger.json";
+import cors from "cors";
 
 export const setupRestEndPoint = (app: Application) => {
   app.use(express.json());
+  app.use(cors());
   app.use("/", UserRoute());
   app.use("/", CategoryRoute());
   app.use("/", ExpenseRoute());
