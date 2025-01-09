@@ -70,7 +70,9 @@ const SignUp = () => {
         <div className="flex justify-center items-center h-screen w-screen z-10">
           <div className="xl:h-[60vh] xl:w-1/4 shadow-xl flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0">
             <div className="w-full p-10 flex flex-col justify-center">
-              <h1 className="text-2xl xl:text-3xl font-bold mb-6">Register</h1>
+              <h1 className="text-2xl xl:text-3xl font-bold mb-6 h-10">
+                Register
+              </h1>
               <div className="signin-container flex flex-col items-center my-4">
                 <div className="w-full mt-4 flex items-center border-b border-gray-300 py-2">
                   <FaUser size={26} className="mr-2 text-gray-900" />
