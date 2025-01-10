@@ -12,7 +12,7 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = ({
     <div className={`flex flex-row ${className}`} {...props}>
       <Aside />
       <main className="w-full">
-        <header className="w-full h-20">
+        <header className="w-full">
           <Header />
           <hr />
         </header>

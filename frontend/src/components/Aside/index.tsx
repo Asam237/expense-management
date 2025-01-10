@@ -29,8 +29,8 @@ const navs: NavsProp[] = [
 
 const Aside = () => {
   return (
-    <aside className="w-full md:w-72 h-screen bg-gradient-to-b from-blue-800 to-blue-600 text-white shadow-lg">
-      <div className="bg-blue-900 p-6 flex items-center justify-center">
+    <aside className="w-full md:w-72 h-screen bg-slate-800 text-white shadow-lg">
+      <div className="bg-slate-950 p-6 flex items-center justify-center">
         <FaWallet className="text-3xl mr-3" />
         <Text size={"3"} className="font-bold">
           Expense Management
@@ -42,7 +42,7 @@ const Aside = () => {
           <Link
             key={index}
             href={item.path}
-            className="flex items-center py-3 px-4 rounded transition duration-200 hover:bg-blue-700 hover:shadow-lg"
+            className="flex items-center py-3 px-4 rounded transition duration-200 hover:bg-gray-950 hover:shadow-lg"
           >
             {index === 0 && <FaMoneyBillWave className="mr-3" />}
             {index === 1 && <FaListAlt className="mr-3" />}
