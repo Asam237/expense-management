@@ -74,7 +74,7 @@ const SignIn = () => {
       >
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <div className="flex justify-center items-center h-screen w-screen z-10">
-          <div className="lg:h-[60vh] xl:h-[50vh] lg:w-1/4 xl:w-1/3 flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0 shadow-xl">
+          <div className="lg:h-[60vh] xl:h-[55vh] lg:w-1/4 xl:w-1/3 flex justify-center flex-row bg-white rounded-lg overflow-hidden mx-10 xl:mx-0 shadow-xl">
             <div className="w-full p-10 flex flex-col justify-center">
               <h1 className="text-2xl xl:text-3xl font-bold mb-6 h-10">
                 Login
