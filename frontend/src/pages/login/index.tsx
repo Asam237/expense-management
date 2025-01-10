@@ -43,7 +43,7 @@ const SignIn = () => {
         setShowTooltip(true);
         setTimeout(() => {
           setShowTooltip(false);
-          router.push("/");
+          router.push("/dashboard");
         }, 2000);
       } else {
         setTooltipMessage("Login failed. Please try again.");

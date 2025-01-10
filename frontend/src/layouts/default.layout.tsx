@@ -1,5 +1,5 @@
 import Aside from "@/components/Aside";
-import Header from "@/components/Heder";
+import Header from "@/components/Header";
 
 interface DefaultLayoutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
