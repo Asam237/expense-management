@@ -44,18 +44,18 @@ const SignIn = () => {
         setTimeout(() => {
           setShowTooltip(false);
           router.push("/dashboard");
-        }, 2000);
+        }, 3000);
       } else {
         setTooltipMessage("Login failed. Please try again.");
         setTooltipColor("bg-red-500");
         setShowTooltip(true);
-        setTimeout(() => setShowTooltip(false), 2000);
+        setTimeout(() => setShowTooltip(false), 3000);
       }
     } catch (error) {
       setTooltipMessage("An error occurred during login. Please try again.");
       setTooltipColor("bg-red-500");
       setShowTooltip(true);
-      setTimeout(() => setShowTooltip(false), 2000);
+      setTimeout(() => setShowTooltip(false), 3000);
     } finally {
       setIsLoading(false);
     }
