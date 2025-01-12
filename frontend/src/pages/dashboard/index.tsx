@@ -1,6 +1,15 @@
 import { DefaultLayout } from "@/layouts/default.layout";
+import { useAuthStore } from "../login";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Home = () => {
+  const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isAuthenticated) router.push("/login");
+  }, [router]);
   return (
     <DefaultLayout>
       <main className="container mx-auto px-6 py-8">
